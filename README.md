@@ -1,1 +1,1 @@
-An Online Medicine Store fo CSE470 Project.
+MedHealth is an online medicine store for the CSE470 project.
