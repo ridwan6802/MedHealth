@@ -1,0 +1,218 @@
+[
+  {
+    "id": 1,
+    "staff_id": 44,
+    "message": "napa is about get stocked out",
+    "is_read": true,
+    "timestamp": "2025-05-01 10:50:38",
+    "notification_type": "stock_alert"
+  },
+  {
+    "id": 2,
+    "staff_id": 44,
+    "message": "the user id 50 did not receive the order",
+    "is_read": true,
+    "timestamp": "2025-05-01 10:51:01",
+    "notification_type": "order_issue"
+  },
+  {
+    "id": 3,
+    "staff_id": 44,
+    "message": "Since, eid is coming, we will stop accepting orders from tomorrow",
+    "is_read": true,
+    "timestamp": "2025-05-01 10:51:55",
+    "notification_type": "general"
+  },
+  {
+    "id": 4,
+    "staff_id": 44,
+    "message": "hmm",
+    "is_read": true,
+    "timestamp": "2025-05-01 10:56:01",
+    "notification_type": "general"
+  },
+  {
+    "id": 5,
+    "staff_id": 44,
+    "message": "siu",
+    "is_read": true,
+    "timestamp": "2025-05-02 14:37:55",
+    "notification_type": "stock_alert"
+  },
+  {
+    "id": 6,
+    "staff_id": 44,
+    "message": "cr7",
+    "is_read": true,
+    "timestamp": "2025-05-02 14:38:34",
+    "notification_type": "general"
+  },
+  {
+    "id": 7,
+    "staff_id": 44,
+    "message": "lesgooooooooooooooooooooo",
+    "is_read": true,
+    "timestamp": "2025-05-05 16:19:15",
+    "notification_type": "general"
+  },
+  {
+    "id": 8,
+    "staff_id": 44,
+    "message": "nokia",
+    "is_read": true,
+    "timestamp": "2025-05-05 16:29:01",
+    "notification_type": "general"
+  },
+  {
+    "id": 9,
+    "staff_id": 44,
+    "message": "dawdasd",
+    "is_read": true,
+    "timestamp": "2025-05-05 16:45:50",
+    "notification_type": "stock_alert"
+  },
+  {
+    "id": 10,
+    "staff_id": 44,
+    "message": "adsasdawd",
+    "is_read": true,
+    "timestamp": "2025-05-05 16:45:54",
+    "notification_type": "system_alert"
+  },
+  {
+    "id": 11,
+    "staff_id": 44,
+    "message": "adwadasgwe",
+    "is_read": true,
+    "timestamp": "2025-05-05 16:45:58",
+    "notification_type": "system_alert"
+  },
+  {
+    "id": 12,
+    "staff_id": 44,
+    "message": "siuuuuuuuuuuuuuuuu\r\n",
+    "is_read": true,
+    "timestamp": "2025-05-05 16:53:19",
+    "notification_type": "general"
+  },
+  {
+    "id": 13,
+    "staff_id": 44,
+    "message": 1,
+    "is_read": true,
+    "timestamp": "2025-05-05 16:53:21",
+    "notification_type": "stock_alert"
+  },
+  {
+    "id": 14,
+    "staff_id": 44,
+    "message": 2,
+    "is_read": true,
+    "timestamp": "2025-05-05 16:53:23",
+    "notification_type": "stock_alert"
+  },
+  {
+    "id": 15,
+    "staff_id": 44,
+    "message": 3,
+    "is_read": true,
+    "timestamp": "2025-05-05 16:53:24",
+    "notification_type": "stock_alert"
+  },
+  {
+    "id": 16,
+    "staff_id": 44,
+    "message": 4,
+    "is_read": true,
+    "timestamp": "2025-05-05 16:53:25",
+    "notification_type": "stock_alert"
+  },
+  {
+    "id": 17,
+    "staff_id": 44,
+    "message": 5,
+    "is_read": true,
+    "timestamp": "2025-05-05 16:53:27",
+    "notification_type": "stock_alert"
+  },
+  {
+    "id": 18,
+    "staff_id": 44,
+    "message": 6,
+    "is_read": true,
+    "timestamp": "2025-05-05 16:53:29",
+    "notification_type": "stock_alert"
+  },
+  {
+    "id": 19,
+    "staff_id": 44,
+    "message": 7,
+    "is_read": true,
+    "timestamp": "2025-05-05 17:04:20",
+    "notification_type": "stock_alert"
+  },
+  {
+    "id": 20,
+    "staff_id": 44,
+    "message": 8,
+    "is_read": true,
+    "timestamp": "2025-05-05 17:04:22",
+    "notification_type": "stock_alert"
+  },
+  {
+    "id": 21,
+    "staff_id": 44,
+    "message": 9,
+    "is_read": true,
+    "timestamp": "2025-05-05 17:04:24",
+    "notification_type": "stock_alert"
+  },
+  {
+    "id": 22,
+    "staff_id": 44,
+    "message": 10,
+    "is_read": true,
+    "timestamp": "2025-05-05 17:04:28",
+    "notification_type": "stock_alert"
+  },
+  {
+    "id": 23,
+    "staff_id": 44,
+    "message": 11,
+    "is_read": true,
+    "timestamp": "2025-05-05 17:07:31",
+    "notification_type": "stock_alert"
+  },
+  {
+    "id": 24,
+    "staff_id": 44,
+    "message": 12,
+    "is_read": true,
+    "timestamp": "2025-05-05 17:07:32",
+    "notification_type": "stock_alert"
+  },
+  {
+    "id": 25,
+    "staff_id": 44,
+    "message": 13,
+    "is_read": true,
+    "timestamp": "2025-05-05 17:07:34",
+    "notification_type": "stock_alert"
+  },
+  {
+    "id": 26,
+    "staff_id": 44,
+    "message": 14,
+    "is_read": true,
+    "timestamp": "2025-05-05 17:07:35",
+    "notification_type": "stock_alert"
+  },
+  {
+    "id": 27,
+    "staff_id": 44,
+    "message": "last test\r\n",
+    "is_read": true,
+    "timestamp": "2025-05-05 17:11:44",
+    "notification_type": "general"
+  }
+]

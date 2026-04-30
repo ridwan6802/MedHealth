@@ -1,0 +1,85 @@
+{
+  "source": "c:\\Users\\Ridwan-PC\\Downloads\\medicare.json",
+  "collections": [
+    {
+      "name": "admins",
+      "documents": 2,
+      "filePath": "C:\\Users\\Ridwan-PC\\Documents\\GitHub\\MedHealth\\medhealth-seed\\admins.json"
+    },
+    {
+      "name": "alembic_version",
+      "documents": 1,
+      "filePath": "C:\\Users\\Ridwan-PC\\Documents\\GitHub\\MedHealth\\medhealth-seed\\alembic_version.json"
+    },
+    {
+      "name": "appointments",
+      "documents": 0,
+      "filePath": "C:\\Users\\Ridwan-PC\\Documents\\GitHub\\MedHealth\\medhealth-seed\\appointments.json"
+    },
+    {
+      "name": "carts",
+      "documents": 3,
+      "filePath": "C:\\Users\\Ridwan-PC\\Documents\\GitHub\\MedHealth\\medhealth-seed\\carts.json"
+    },
+    {
+      "name": "categories",
+      "documents": 20,
+      "filePath": "C:\\Users\\Ridwan-PC\\Documents\\GitHub\\MedHealth\\medhealth-seed\\categories.json"
+    },
+    {
+      "name": "chats",
+      "documents": 63,
+      "filePath": "C:\\Users\\Ridwan-PC\\Documents\\GitHub\\MedHealth\\medhealth-seed\\chats.json"
+    },
+    {
+      "name": "customers",
+      "documents": 10,
+      "filePath": "C:\\Users\\Ridwan-PC\\Documents\\GitHub\\MedHealth\\medhealth-seed\\customers.json"
+    },
+    {
+      "name": "doctors",
+      "documents": 0,
+      "filePath": "C:\\Users\\Ridwan-PC\\Documents\\GitHub\\MedHealth\\medhealth-seed\\doctors.json"
+    },
+    {
+      "name": "medicines",
+      "documents": 60,
+      "filePath": "C:\\Users\\Ridwan-PC\\Documents\\GitHub\\MedHealth\\medhealth-seed\\medicines.json"
+    },
+    {
+      "name": "notifications",
+      "documents": 27,
+      "filePath": "C:\\Users\\Ridwan-PC\\Documents\\GitHub\\MedHealth\\medhealth-seed\\notifications.json"
+    },
+    {
+      "name": "orders",
+      "documents": 8,
+      "filePath": "C:\\Users\\Ridwan-PC\\Documents\\GitHub\\MedHealth\\medhealth-seed\\orders.json"
+    },
+    {
+      "name": "order_details",
+      "documents": 0,
+      "filePath": "C:\\Users\\Ridwan-PC\\Documents\\GitHub\\MedHealth\\medhealth-seed\\order_details.json"
+    },
+    {
+      "name": "order_items",
+      "documents": 0,
+      "filePath": "C:\\Users\\Ridwan-PC\\Documents\\GitHub\\MedHealth\\medhealth-seed\\order_items.json"
+    },
+    {
+      "name": "prescriptions",
+      "documents": 0,
+      "filePath": "C:\\Users\\Ridwan-PC\\Documents\\GitHub\\MedHealth\\medhealth-seed\\prescriptions.json"
+    },
+    {
+      "name": "staff",
+      "documents": 1,
+      "filePath": "C:\\Users\\Ridwan-PC\\Documents\\GitHub\\MedHealth\\medhealth-seed\\staff.json"
+    },
+    {
+      "name": "users",
+      "documents": 15,
+      "filePath": "C:\\Users\\Ridwan-PC\\Documents\\GitHub\\MedHealth\\medhealth-seed\\users.json"
+    }
+  ]
+}

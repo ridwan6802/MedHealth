@@ -1,0 +1,20 @@
+[
+  {
+    "id": 81,
+    "quantity": 1,
+    "customer_id": 3,
+    "medicine_id": 77
+  },
+  {
+    "id": 82,
+    "quantity": 1,
+    "customer_id": 3,
+    "medicine_id": 93
+  },
+  {
+    "id": 129,
+    "quantity": 1,
+    "customer_id": 54,
+    "medicine_id": 77
+  }
+]

@@ -1,0 +1,506 @@
+[
+  {
+    "id": 1,
+    "customer_id": 3,
+    "message": "Hello, I have a question about my recent order.",
+    "is_from_customer": true,
+    "is_read": true,
+    "timestamp": "2025-04-23 16:39:37"
+  },
+  {
+    "id": 2,
+    "customer_id": 3,
+    "message": "What is your question? I'm here to help.",
+    "is_from_customer": false,
+    "is_read": true,
+    "timestamp": "2025-04-23 17:39:37"
+  },
+  {
+    "id": 3,
+    "customer_id": 3,
+    "message": "I ordered Paracetamol but received Aspirin instead. Can you help?",
+    "is_from_customer": true,
+    "is_read": true,
+    "timestamp": "2025-04-24 16:39:37"
+  },
+  {
+    "id": 4,
+    "customer_id": 3,
+    "message": "I apologize for the mix-up. We'll send the correct medicine right away.",
+    "is_from_customer": false,
+    "is_read": true,
+    "timestamp": "2025-04-24 17:09:37"
+  },
+  {
+    "id": 5,
+    "customer_id": 3,
+    "message": "Thank you! When can I expect the delivery?",
+    "is_from_customer": true,
+    "is_read": true,
+    "timestamp": "2025-04-25 11:39:41"
+  },
+  {
+    "id": 11,
+    "customer_id": 3,
+    "message": "Hello, I need help with a prescription upload.",
+    "is_from_customer": true,
+    "is_read": true,
+    "timestamp": "2025-04-25 10:40:40"
+  },
+  {
+    "id": 12,
+    "customer_id": 3,
+    "message": "The site says my file format is not supported. What formats can I use?",
+    "is_from_customer": true,
+    "is_read": true,
+    "timestamp": "2025-04-25 11:40:41"
+  },
+  {
+    "id": 13,
+    "customer_id": 3,
+    "message": "you need to upload jpeg picture files",
+    "is_from_customer": false,
+    "is_read": true,
+    "timestamp": "2025-04-25 10:41:20"
+  },
+  {
+    "id": 14,
+    "customer_id": 3,
+    "message": "okay",
+    "is_from_customer": false,
+    "is_read": true,
+    "timestamp": "2025-04-25 10:50:22"
+  },
+  {
+    "id": 15,
+    "customer_id": 51,
+    "message": "Can I get a refill on my previous prescription?",
+    "is_from_customer": true,
+    "is_read": true,
+    "timestamp": "2025-04-24 10:15:00"
+  },
+  {
+    "id": 16,
+    "customer_id": 52,
+    "message": "Your prescription has been refilled and is ready for delivery.",
+    "is_from_customer": false,
+    "is_read": true,
+    "timestamp": "2025-04-24 11:00:00"
+  },
+  {
+    "id": 17,
+    "customer_id": 51,
+    "message": "yes sure",
+    "is_from_customer": false,
+    "is_read": true,
+    "timestamp": "2025-04-25 11:12:12"
+  },
+  {
+    "id": 18,
+    "customer_id": 51,
+    "message": "hello, you there?",
+    "is_from_customer": false,
+    "is_read": true,
+    "timestamp": "2025-04-25 11:33:54"
+  },
+  {
+    "id": 19,
+    "customer_id": 52,
+    "message": "ji",
+    "is_from_customer": false,
+    "is_read": true,
+    "timestamp": "2025-04-25 11:35:16"
+  },
+  {
+    "id": 20,
+    "customer_id": 51,
+    "message": "kire bhai",
+    "is_from_customer": false,
+    "is_read": true,
+    "timestamp": "2025-04-25 11:41:58"
+  },
+  {
+    "id": 21,
+    "customer_id": 51,
+    "message": "hey",
+    "is_from_customer": false,
+    "is_read": true,
+    "timestamp": "2025-04-26 19:26:21"
+  },
+  {
+    "id": 22,
+    "customer_id": 3,
+    "message": "jpeg",
+    "is_from_customer": false,
+    "is_read": true,
+    "timestamp": "2025-04-26 19:26:39"
+  },
+  {
+    "id": 23,
+    "customer_id": 3,
+    "message": "okay",
+    "is_from_customer": true,
+    "is_read": true,
+    "timestamp": "2025-04-30 17:21:35"
+  },
+  {
+    "id": 24,
+    "customer_id": 3,
+    "message": "did you get your delivery?",
+    "is_from_customer": false,
+    "is_read": true,
+    "timestamp": "2025-04-30 17:22:23"
+  },
+  {
+    "id": 25,
+    "customer_id": 3,
+    "message": "not yet",
+    "is_from_customer": true,
+    "is_read": true,
+    "timestamp": "2025-04-30 17:31:36"
+  },
+  {
+    "id": 26,
+    "customer_id": 3,
+    "message": "than you for you patience sir",
+    "is_from_customer": false,
+    "is_read": true,
+    "timestamp": "2025-04-30 17:32:31"
+  },
+  {
+    "id": 27,
+    "customer_id": 3,
+    "message": ".",
+    "is_from_customer": true,
+    "is_read": true,
+    "timestamp": "2025-04-30 17:47:31"
+  },
+  {
+    "id": 28,
+    "customer_id": 3,
+    "message": "lesgoooooooooo",
+    "is_from_customer": true,
+    "is_read": true,
+    "timestamp": "2025-04-30 17:48:41"
+  },
+  {
+    "id": 29,
+    "customer_id": 3,
+    "message": ".",
+    "is_from_customer": false,
+    "is_read": true,
+    "timestamp": "2025-04-30 18:16:28"
+  },
+  {
+    "id": 30,
+    "customer_id": 3,
+    "message": "gg",
+    "is_from_customer": false,
+    "is_read": true,
+    "timestamp": "2025-04-30 18:34:57"
+  },
+  {
+    "id": 31,
+    "customer_id": 3,
+    "message": "wp",
+    "is_from_customer": true,
+    "is_read": true,
+    "timestamp": "2025-04-30 18:35:17"
+  },
+  {
+    "id": 32,
+    "customer_id": 3,
+    "message": "ty",
+    "is_from_customer": false,
+    "is_read": true,
+    "timestamp": "2025-04-30 18:42:46"
+  },
+  {
+    "id": 33,
+    "customer_id": 3,
+    "message": "okay",
+    "is_from_customer": true,
+    "is_read": true,
+    "timestamp": "2025-04-30 18:49:36"
+  },
+  {
+    "id": 34,
+    "customer_id": 3,
+    "message": "okay",
+    "is_from_customer": true,
+    "is_read": true,
+    "timestamp": "2025-04-30 18:54:46"
+  },
+  {
+    "id": 35,
+    "customer_id": 3,
+    "message": "gg",
+    "is_from_customer": true,
+    "is_read": true,
+    "timestamp": "2025-04-30 18:54:52"
+  },
+  {
+    "id": 36,
+    "customer_id": 3,
+    "message": "gg",
+    "is_from_customer": true,
+    "is_read": true,
+    "timestamp": "2025-04-30 18:54:52"
+  },
+  {
+    "id": 37,
+    "customer_id": 3,
+    "message": "gg",
+    "is_from_customer": true,
+    "is_read": true,
+    "timestamp": "2025-04-30 18:54:52"
+  },
+  {
+    "id": 38,
+    "customer_id": 3,
+    "message": "gg",
+    "is_from_customer": true,
+    "is_read": true,
+    "timestamp": "2025-04-30 18:54:53"
+  },
+  {
+    "id": 39,
+    "customer_id": 3,
+    "message": "oye",
+    "is_from_customer": true,
+    "is_read": true,
+    "timestamp": "2025-04-30 18:56:03"
+  },
+  {
+    "id": 40,
+    "customer_id": 3,
+    "message": "eeeeeeeeeeee",
+    "is_from_customer": true,
+    "is_read": true,
+    "timestamp": "2025-04-30 19:00:00"
+  },
+  {
+    "id": 41,
+    "customer_id": 3,
+    "message": "oye",
+    "is_from_customer": true,
+    "is_read": true,
+    "timestamp": "2025-04-30 19:06:08"
+  },
+  {
+    "id": 42,
+    "customer_id": 3,
+    "message": "thank god",
+    "is_from_customer": true,
+    "is_read": true,
+    "timestamp": "2025-04-30 19:07:14"
+  },
+  {
+    "id": 43,
+    "customer_id": 3,
+    "message": "yes yes yes",
+    "is_from_customer": false,
+    "is_read": true,
+    "timestamp": "2025-04-30 19:11:48"
+  },
+  {
+    "id": 44,
+    "customer_id": 3,
+    "message": ".",
+    "is_from_customer": false,
+    "is_read": true,
+    "timestamp": "2025-04-30 19:13:20"
+  },
+  {
+    "id": 45,
+    "customer_id": 3,
+    "message": "hmm",
+    "is_from_customer": false,
+    "is_read": true,
+    "timestamp": "2025-04-30 19:15:04"
+  },
+  {
+    "id": 46,
+    "customer_id": 3,
+    "message": "shei shei",
+    "is_from_customer": false,
+    "is_read": true,
+    "timestamp": "2025-04-30 19:15:09"
+  },
+  {
+    "id": 47,
+    "customer_id": 50,
+    "message": "hello i want to ask something",
+    "is_from_customer": true,
+    "is_read": true,
+    "timestamp": "2025-04-30 19:20:48"
+  },
+  {
+    "id": 48,
+    "customer_id": 50,
+    "message": "sure sir, how can i help?",
+    "is_from_customer": false,
+    "is_read": true,
+    "timestamp": "2025-04-30 19:21:22"
+  },
+  {
+    "id": 49,
+    "customer_id": 50,
+    "message": "hello, this is staff",
+    "is_from_customer": false,
+    "is_read": true,
+    "timestamp": "2025-05-01 10:36:44"
+  },
+  {
+    "id": 50,
+    "customer_id": 50,
+    "message": "damn",
+    "is_from_customer": true,
+    "is_read": true,
+    "timestamp": "2025-05-01 10:37:13"
+  },
+  {
+    "id": 51,
+    "customer_id": 50,
+    "message": "yessir",
+    "is_from_customer": false,
+    "is_read": true,
+    "timestamp": "2025-05-02 11:29:21"
+  },
+  {
+    "id": 52,
+    "customer_id": 50,
+    "message": "ji",
+    "is_from_customer": false,
+    "is_read": true,
+    "timestamp": "2025-05-02 11:31:30"
+  },
+  {
+    "id": 53,
+    "customer_id": 50,
+    "message": "yooooooooooooo",
+    "is_from_customer": true,
+    "is_read": true,
+    "timestamp": "2025-05-02 11:31:44"
+  },
+  {
+    "id": 54,
+    "customer_id": 50,
+    "message": "is it working?",
+    "is_from_customer": false,
+    "is_read": true,
+    "timestamp": "2025-05-02 11:38:12"
+  },
+  {
+    "id": 55,
+    "customer_id": 50,
+    "message": "i think so",
+    "is_from_customer": true,
+    "is_read": true,
+    "timestamp": "2025-05-02 11:38:36"
+  },
+  {
+    "id": 56,
+    "customer_id": 50,
+    "message": "ahem",
+    "is_from_customer": false,
+    "is_read": true,
+    "timestamp": "2025-05-02 11:45:43"
+  },
+  {
+    "id": 57,
+    "customer_id": 50,
+    "message": "hu",
+    "is_from_customer": false,
+    "is_read": true,
+    "timestamp": "2025-05-02 11:45:57"
+  },
+  {
+    "id": 58,
+    "customer_id": 50,
+    "message": "sure",
+    "is_from_customer": false,
+    "is_read": true,
+    "timestamp": "2025-05-02 11:47:14"
+  },
+  {
+    "id": 59,
+    "customer_id": 50,
+    "message": "okay",
+    "is_from_customer": true,
+    "is_read": true,
+    "timestamp": "2025-05-02 11:47:33"
+  },
+  {
+    "id": 60,
+    "customer_id": 50,
+    "message": "uf",
+    "is_from_customer": true,
+    "is_read": true,
+    "timestamp": "2025-05-02 11:58:54"
+  },
+  {
+    "id": 61,
+    "customer_id": 50,
+    "message": "o",
+    "is_from_customer": true,
+    "is_read": true,
+    "timestamp": "2025-05-02 11:58:57"
+  },
+  {
+    "id": 62,
+    "customer_id": 50,
+    "message": "siu",
+    "is_from_customer": true,
+    "is_read": true,
+    "timestamp": "2025-05-02 11:59:02"
+  },
+  {
+    "id": 63,
+    "customer_id": 50,
+    "message": "eeeeeeeeeeee",
+    "is_from_customer": true,
+    "is_read": true,
+    "timestamp": "2025-05-02 12:10:30"
+  },
+  {
+    "id": 64,
+    "customer_id": 50,
+    "message": "hehe",
+    "is_from_customer": true,
+    "is_read": true,
+    "timestamp": "2025-05-02 12:10:42"
+  },
+  {
+    "id": 65,
+    "customer_id": 50,
+    "message": "lesgooo",
+    "is_from_customer": true,
+    "is_read": true,
+    "timestamp": "2025-05-02 12:10:46"
+  },
+  {
+    "id": 66,
+    "customer_id": 50,
+    "message": "yeah it's fixed now",
+    "is_from_customer": false,
+    "is_read": true,
+    "timestamp": "2025-05-02 12:15:36"
+  },
+  {
+    "id": 67,
+    "customer_id": 50,
+    "message": "perfecto",
+    "is_from_customer": true,
+    "is_read": true,
+    "timestamp": "2025-05-02 12:18:52"
+  },
+  {
+    "id": 68,
+    "customer_id": 46,
+    "message": "hello?",
+    "is_from_customer": true,
+    "is_read": false,
+    "timestamp": "2025-05-13 20:57:59"
+  }
+]

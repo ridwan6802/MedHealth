@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "name": "Vitamins and Supplements",
+    "description": "Health supplements and multivitamins."
+  },
+  {
+    "id": 2,
+    "name": "Skin Care",
+    "description": "Medicines and creams for skin care and treatments."
+  },
+  {
+    "id": 3,
+    "name": "Allergy Relief",
+    "description": "Medicines to manage and treat allergies."
+  },
+  {
+    "id": 4,
+    "name": "Digestive Health",
+    "description": "Medicines for digestive system care, such as antacids and laxatives."
+  },
+  {
+    "id": 5,
+    "name": "Heart Health",
+    "description": "Medicines for cardiovascular health and blood pressure management."
+  },
+  {
+    "id": 6,
+    "name": "Diabetes Care",
+    "description": "Medicines and supplies for managing diabetes."
+  },
+  {
+    "id": 7,
+    "name": "Eye Care",
+    "description": "Drops and medicines for eye health and infections."
+  },
+  {
+    "id": 8,
+    "name": "Child Health",
+    "description": "Medicines specifically formulated for children."
+  },
+  {
+    "id": 9,
+    "name": "Women's Health",
+    "description": "Medicines for women-specific health conditions."
+  },
+  {
+    "id": 10,
+    "name": "Men's Health",
+    "description": "Medicines for men-specific health conditions."
+  },
+  {
+    "id": 11,
+    "name": "Mental Health",
+    "description": "Medicines for mental health and neurological disorders."
+  },
+  {
+    "id": 12,
+    "name": "First Aid",
+    "description": "Medicines and items for immediate first aid care."
+  },
+  {
+    "id": 13,
+    "name": "Respiratory Health",
+    "description": "Medicines for asthma and other respiratory conditions."
+  },
+  {
+    "id": 14,
+    "name": "Herbal Remedies",
+    "description": "Natural and herbal medicine options."
+  },
+  {
+    "id": 15,
+    "name": "Weight Management",
+    "description": "Medicines and supplements for weight loss or gain."
+  },
+  {
+    "id": 16,
+    "name": "Immunity Boosters",
+    "description": "Supplements and medicines to enhance immunity."
+  },
+  {
+    "id": 17,
+    "name": "Dental Care",
+    "description": "Medicines and products for oral health and dental care."
+  },
+  {
+    "id": 18,
+    "name": "Antibiotics",
+    "description": "Medicines used to treat bacterial infections."
+  },
+  {
+    "id": 19,
+    "name": "Pain Relief",
+    "description": "Medicines for reducing pain and inflammation."
+  },
+  {
+    "id": 20,
+    "name": "Cold and Cough Relief",
+    "description": "Medicines for relieving cold, cough, and flu symptoms."
+  }
+]

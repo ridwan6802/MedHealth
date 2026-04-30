@@ -1,0 +1,152 @@
+[
+  {
+    "id": 3,
+    "username": "Md. Rafiul Islam",
+    "email": "rafit991@gmail.com",
+    "password": "rafit991",
+    "address": "Zigatola, Dhanmondi",
+    "phone": "01845904415",
+    "role": "customer",
+    "type": "customer"
+  },
+  {
+    "id": 4,
+    "username": "Test User",
+    "email": "test@example.com",
+    "password": "testpassword",
+    "address": null,
+    "phone": null,
+    "role": "customer",
+    "type": "customer"
+  },
+  {
+    "id": 8,
+    "username": "test111",
+    "email": "test1@gmail.com",
+    "password": "test1234",
+    "address": null,
+    "phone": "12345678901",
+    "role": "customer",
+    "type": "customer"
+  },
+  {
+    "id": 10,
+    "username": "rafitboo",
+    "email": "rafit@admin.com",
+    "password": "rafit123",
+    "address": "romjan bus",
+    "phone": "2345678910",
+    "role": "admin",
+    "type": "admin"
+  },
+  {
+    "id": 43,
+    "username": "wasi",
+    "email": "wasi@admin.com",
+    "password": "wasi1234",
+    "address": "Shantinagar",
+    "phone": "0168234342",
+    "role": "admin",
+    "type": "admin"
+  },
+  {
+    "id": 44,
+    "username": "Rafu",
+    "email": "rafu@staff.com",
+    "password": "rafu1234",
+    "address": "Eije Ekhaneiiiiiii",
+    "phone": "121313241",
+    "role": "staff",
+    "type": "staff"
+  },
+  {
+    "id": 46,
+    "username": "Shutupp",
+    "email": "shut@up.com",
+    "password": "12345678",
+    "address": "Eije",
+    "phone": "1234567890",
+    "role": "customer",
+    "type": "customer"
+  },
+  {
+    "id": 47,
+    "username": "Hello Ji",
+    "email": "hello@ji.com",
+    "password": "hello123",
+    "address": "None",
+    "phone": "12345678901",
+    "role": "customer",
+    "type": "customer"
+  },
+  {
+    "id": 48,
+    "username": "Lmao",
+    "email": "lmao@gg.com",
+    "password": "lmao1234",
+    "address": "None",
+    "phone": "12345678901",
+    "role": "customer",
+    "type": "customer"
+  },
+  {
+    "id": 49,
+    "username": "Abcd",
+    "email": "ab@cd.com",
+    "password": "12345678",
+    "address": null,
+    "phone": "01812345679",
+    "role": "customer",
+    "type": "customer"
+  },
+  {
+    "id": 50,
+    "username": "Skibidi",
+    "email": "skibidi@rizz.com",
+    "password": "skibidi123",
+    "address": "",
+    "phone": "12369696969",
+    "role": "customer",
+    "type": "customer"
+  },
+  {
+    "id": 51,
+    "username": "Raihan",
+    "email": "raihan@gmail.com",
+    "password": "raihan123",
+    "address": "",
+    "phone": "01889122334",
+    "role": "customer",
+    "type": "customer"
+  },
+  {
+    "id": 52,
+    "username": "Rafi",
+    "email": "rafi@gmail.com",
+    "password": "rafi1234",
+    "address": "",
+    "phone": "01912234567",
+    "role": "customer",
+    "type": "customer"
+  },
+  {
+    "id": 53,
+    "username": "Lesgooooooooo",
+    "email": "lsg@oo.com",
+    "password": "lesgo123",
+    "address": null,
+    "phone": "271378162197",
+    "role": "customer",
+    "type": "customer"
+  },
+  {
+    "id": 54,
+    "username": "Ridu06",
+    "email": "arifridwanshadid@gmail.com",
+    "password": "87654321",
+    "address": null,
+    "phone": "01728345446",
+    "role": "customer",
+    "type": "customer"
+  }
+]
