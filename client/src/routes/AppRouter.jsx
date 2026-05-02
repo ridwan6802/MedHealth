@@ -8,6 +8,7 @@ import {
   CustomerMessagesController,
   OrdersController
 } from '../controllers/customerController';
+import AboutView from '../views/AboutView';
 import {
   AdminDashboardController,
   AdminUsersController,
@@ -60,6 +61,7 @@ export default function AppRouter() {
           </ProtectedRoute>
         }
       />
+      <Route path="/about" element={<AboutView />} />
       <Route
         path="/customer/orders"
         element={

@@ -3,15 +3,19 @@ import BrandHeader from '../components/BrandHeader';
 import appStoreLogo from './images/app-store.png';
 import medhealthLogo from './images/logo.png';
 import playStoreLogo from './images/play-store.png';
+import medicineBottle from './images/medicine-bottle.png';
 
 export default function HomeView() {
   return (
     <main className="home-page">
       <BrandHeader />
 
-      <section className="hero">
+      <section className="hero" id="about">
         <div className="hero-content">
-          <h1>Your Health, Our Priority</h1>
+          <h1>
+            <span className="hero-line">Your Health,</span>
+            <span className="hero-line">Our Priority</span>
+          </h1>
           <p>Get genuine medicines delivered to your doorstep in just 24 hours</p>
           <div className="hero-buttons">
             <Link to="/login" className="btn btn-primary">Login</Link>
@@ -20,9 +24,7 @@ export default function HomeView() {
         </div>
         <div className="hero-image" aria-hidden="true">
           <div className="hero-image-card">
-            <div className="pill pill-one" />
-            <div className="pill pill-two" />
-            <div className="pill pill-three" />
+            <img src={medicineBottle} alt="" className="hero-bottle-img" aria-hidden="true" />
           </div>
         </div>
       </section>
@@ -48,7 +50,7 @@ export default function HomeView() {
         </div>
       </section>
 
-      <section className="categories">
+      <section className="categories" id="products">
         <h2>Shop by Category</h2>
         <div className="category-slider">
           <div className="category-card"><h3>Prescription</h3></div>
@@ -59,7 +61,7 @@ export default function HomeView() {
         </div>
       </section>
 
-      <section className="testimonials">
+      <section className="testimonials" id="support">
         <h2>What Our Customers Say</h2>
         <div className="testimonial-slider">
           <article className="testimonial-card">
@@ -78,6 +80,14 @@ export default function HomeView() {
             <div className="customer">- Amit S.</div>
           </article>
         </div>
+      </section>
+
+      <section className="support-strip">
+        <div>
+          <h2>Need help?</h2>
+          <p>Use Messages to talk with our team, or reach us anytime for order support.</p>
+        </div>
+        <Link to="/customer/messages" className="support-strip-btn">Open Messages</Link>
       </section>
 
       <section className="cta">

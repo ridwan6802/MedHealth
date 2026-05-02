@@ -1,4 +1,5 @@
 import BrandHeader from '../../components/BrandHeader';
+import bkashIcon from '../images/bKashIcon.png';
 
 export default function CheckoutView({
   cart,
@@ -6,6 +7,9 @@ export default function CheckoutView({
   submitting,
   error,
   message,
+  warningMessage,
+  showWarningBanner,
+  isWarningBannerVisible,
   paymentMethod,
   transactionId,
   bkashNumber,
@@ -51,6 +55,12 @@ export default function CheckoutView({
             {error ? <p className="form-error">{error}</p> : null}
             {message ? <p className="dashboard-note">{message}</p> : null}
 
+            {showWarningBanner ? (
+              <div className={`cart-success-banner stock-warning-banner checkout-warning-banner${isWarningBannerVisible ? ' visible' : ''}`} role="status" aria-live="polite">
+                {warningMessage}
+              </div>
+            ) : null}
+
             <form id="payment-form" onSubmit={onSubmit}>
               <div className="payment-methods mb-4 text-center">
                 <h3 className="payment-title mb-4">Select Payment Method</h3>
@@ -67,16 +77,33 @@ export default function CheckoutView({
               {paymentMethod === 'bKash' ? (
                 <div className="bkash-section">
                   <div className="payment-instructions">
-                    <h5>bKash Payment Instructions</h5>
-                    <ol>
-                      <li>Send payment to: <strong>01712345678</strong></li>
-                      <li>Keep your Transaction ID ready</li>
-                      <li>Fill in the details below</li>
-                    </ol>
+                    <div className="payment-instructions-header">
+                      <div className="payment-instructions-badge">
+                        <img src={bkashIcon} alt="bKash" className="payment-instructions-badge-image" />
+                      </div>
+                      <div>
+                        <h5>bKash Payment Instructions</h5>
+                        <p>Please follow these steps to complete your payment.</p>
+                      </div>
+                    </div>
+                    <div className="payment-instructions-list">
+                      <div className="payment-instruction-item">
+                        <span className="instruction-icon">1</span>
+                        <span>Send payment to: <strong>01712345678</strong></span>
+                      </div>
+                      <div className="payment-instruction-item">
+                        <span className="instruction-icon">2</span>
+                        <span>Keep your Transaction ID ready</span>
+                      </div>
+                      <div className="payment-instruction-item">
+                        <span className="instruction-icon">3</span>
+                        <span>Fill in the bKash Number and Transaction ID below</span>
+                      </div>
+                    </div>
                   </div>
                   <div className="form-group">
                     <label htmlFor="bkash_number">bKash Number</label>
-                    <input type="text" id="bkash_number" value={bkashNumber} onChange={(event) => onBkashNumberChange(event.target.value)} placeholder="01XXXXXXXXX" />
+                    <input type="tel" id="bkash_number" inputMode="numeric" maxLength="11" value={bkashNumber} onChange={(event) => onBkashNumberChange(event.target.value)} placeholder="01XXXXXXXXX" />
                   </div>
                   <div className="form-group">
                     <label htmlFor="transaction_id">Transaction ID</label>

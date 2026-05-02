@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import DashboardView from '../views/customer/DashboardView';
 import CartView from '../views/customer/CartView';
 import CheckoutView from '../views/customer/CheckoutView';
@@ -10,6 +11,7 @@ import { createOrder, getOrders } from '../models/orderModel';
 import { getCustomerMessages, sendCustomerMessage } from '../models/chatModel';
 
 export function CustomerDashboardController() {
+  const location = useLocation();
   const [medicines, setMedicines] = useState([]);
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -32,11 +34,18 @@ export function CustomerDashboardController() {
     loadCatalog();
   }, []);
 
+  useEffect(() => {
+    const orderMessage = location.state?.orderMessage;
+    if (orderMessage) {
+      setCartMessage(orderMessage);
+    }
+  }, [location.state]);
+
   const handleAddToCart = async (medicineId, quantity = 1) => {
     try {
       setCartMessage('');
       await addToCart(medicineId, quantity);
-      setCartMessage('Added to cart');
+      setCartMessage('Item added to cart successfully.');
     } catch (cartError) {
       setCartMessage(cartError.message);
     }
@@ -121,6 +130,7 @@ export function CartController() {
 }
 
 export function CheckoutController() {
+  const navigate = useNavigate();
   const [cart, setCart] = useState({ items: [] });
   const [paymentMethod, setPaymentMethod] = useState('Cash on Delivery');
   const [transactionId, setTransactionId] = useState('');
@@ -129,6 +139,9 @@ export function CheckoutController() {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState('');
   const [message, setMessage] = useState('');
+  const [warningMessage, setWarningMessage] = useState('');
+  const [showWarningBanner, setShowWarningBanner] = useState(false);
+  const [isWarningBannerVisible, setIsWarningBannerVisible] = useState(false);
 
   useEffect(() => {
     async function loadCart() {
@@ -145,16 +158,85 @@ export function CheckoutController() {
     loadCart();
   }, []);
 
+  const flashCheckoutWarning = (warning) => {
+    setWarningMessage(warning);
+    setShowWarningBanner(true);
+    setIsWarningBannerVisible(false);
+
+    const enterFrame = window.requestAnimationFrame(() => {
+      setIsWarningBannerVisible(true);
+    });
+
+    const fadeTimer = window.setTimeout(() => {
+      setIsWarningBannerVisible(false);
+    }, 2600);
+
+    const hideTimer = window.setTimeout(() => {
+      setShowWarningBanner(false);
+      setWarningMessage('');
+      setIsWarningBannerVisible(false);
+    }, 3000);
+
+    return () => {
+      window.cancelAnimationFrame(enterFrame);
+      window.clearTimeout(fadeTimer);
+      window.clearTimeout(hideTimer);
+    };
+  };
+
+  const handleBkashNumberChange = (value) => {
+    const digitsOnly = String(value || '').replace(/\D/g, '').slice(0, 11);
+    setBkashNumber(digitsOnly);
+  };
+
+  const handleTransactionIdChange = (value) => {
+    setTransactionId(value);
+  };
+
+  const isValidBkashNumber = (value) => /^01\d{9}$/.test(String(value || '').trim());
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     setSubmitting(true);
     setError('');
     setMessage('');
 
+    if (paymentMethod === 'bKash') {
+      const trimmedBkashNumber = bkashNumber.trim();
+      const trimmedTransactionId = transactionId.trim();
+
+      if (!trimmedBkashNumber && !trimmedTransactionId) {
+        flashCheckoutWarning('Please provide your bKash Number and Transaction ID.');
+        setSubmitting(false);
+        return;
+      }
+
+      if (!trimmedBkashNumber) {
+        flashCheckoutWarning('Please provide your bKash Number.');
+        setSubmitting(false);
+        return;
+      }
+
+      if (!isValidBkashNumber(trimmedBkashNumber)) {
+        flashCheckoutWarning('Please provide a valid bKash Number. It must be 11 digits and start with 01.');
+        setSubmitting(false);
+        return;
+      }
+
+      if (!trimmedTransactionId) {
+        flashCheckoutWarning('Please provide your Transaction ID.');
+        setSubmitting(false);
+        return;
+      }
+    }
+
     try {
       const order = await createOrder({ paymentMethod, transactionId, bkashNumber });
-      setMessage(`Order placed successfully: ${order._id}`);
       setCart({ items: [] });
+      navigate('/customer', {
+        replace: true,
+        state: { orderMessage: 'Order placed successfully!' }
+      });
     } catch (orderError) {
       setError(orderError.message);
     } finally {
@@ -169,12 +251,15 @@ export function CheckoutController() {
       submitting={submitting}
       error={error}
       message={message}
+      warningMessage={warningMessage}
+      showWarningBanner={showWarningBanner}
+      isWarningBannerVisible={isWarningBannerVisible}
       paymentMethod={paymentMethod}
       transactionId={transactionId}
       bkashNumber={bkashNumber}
       onPaymentMethodChange={setPaymentMethod}
-      onTransactionIdChange={setTransactionId}
-      onBkashNumberChange={setBkashNumber}
+      onTransactionIdChange={handleTransactionIdChange}
+      onBkashNumberChange={handleBkashNumberChange}
       onSubmit={handleSubmit}
     />
   );

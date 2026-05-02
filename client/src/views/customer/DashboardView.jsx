@@ -95,7 +95,12 @@ export default function DashboardView({ medicines, categories, loading, error, c
       const currentValue = current[medicineId] || 1;
       const nextValue = Math.max(1, currentValue + delta);
 
-      if (stock && nextValue > stock) {
+      if (stock <= 0) {
+        flashStockWarning('Item is Out of Stock!');
+        return { ...current, [medicineId]: 1 };
+      }
+
+      if (nextValue > stock) {
         flashStockWarning(`Only ${stock} item${stock === 1 ? '' : 's'} in stock.`);
         return { ...current, [medicineId]: stock };
       }
@@ -105,7 +110,12 @@ export default function DashboardView({ medicines, categories, loading, error, c
   };
 
   const handleAddToCart = (medicineId, quantity, stock) => {
-    if (stock && quantity > stock) {
+    if (stock <= 0) {
+      flashStockWarning('Item is Out of Stock!');
+      return;
+    }
+
+    if (quantity > stock) {
       flashStockWarning(`Only ${stock} item${stock === 1 ? '' : 's'} in stock.`);
       return;
     }
@@ -183,7 +193,7 @@ export default function DashboardView({ medicines, categories, loading, error, c
 
       {showCartBanner ? (
         <div className={`cart-success-banner${isCartBannerVisible ? ' visible' : ''}`} role="status" aria-live="polite">
-          Item added to cart successfully.
+          {cartMessage}
         </div>
       ) : null}
 
