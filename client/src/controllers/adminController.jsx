@@ -3,6 +3,8 @@ import DashboardView from '../views/admin/DashboardView';
 import UsersView from '../views/admin/UsersView';
 import MedicinesView from '../views/admin/MedicinesView';
 import CategoriesView from '../views/admin/CategoriesView';
+import AdminMessagesView from '../views/admin/MessagesView';
+import AdminConversationView from '../views/admin/ConversationView';
 import {
   getDashboardSummary,
   getUsers,
@@ -22,6 +24,7 @@ import {
   markAdminNotificationRead,
   markAllAdminNotificationsRead
 } from '../models/notificationModel';
+import { getStaffMessageThreads, getStaffConversation, sendStaffMessage } from '../models/chatModel';
 import AdminNotificationsView from '../views/admin/NotificationsView';
 
 export function AdminDashboardController() {
@@ -421,4 +424,37 @@ export function AdminNotificationsController() {
       onMarkAll={handleMarkAll}
     />
   );
+}
+
+export function AdminMessagesController() {
+  const [messages, setMessages] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
+
+  useEffect(() => {
+    async function loadMessages() {
+      try {
+        const messageData = await getStaffMessageThreads();
+        setMessages(messageData);
+      } catch (chatError) {
+        setError(chatError.message);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    loadMessages();
+  }, []);
+
+  return (
+    <AdminMessagesView
+      threads={messages}
+      loading={loading}
+      error={error}
+    />
+  );
+}
+
+export function AdminConversationController() {
+  return <AdminConversationView />;
 }

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function SignupView({ formData, error, loading, onChange, onSubmit }) {
+export default function SignupView({ formData, error, validationErrors, loading, onChange, onSubmit }) {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
@@ -8,6 +8,13 @@ export default function SignupView({ formData, error, loading, onChange, onSubmi
     <main className="signup-page">
       <div className="signup-container">
         <div className="signup-card">
+          {error && (
+            <div className="warning-banner">
+              <span className="warning-icon">⚠️</span>
+              <span>{error}</span>
+            </div>
+          )}
+
           <div className="signup-header">
             <h1>Create Your Account</h1>
             <p>Join MedHealth to get your medicines delivered quickly</p>
@@ -75,8 +82,6 @@ export default function SignupView({ formData, error, loading, onChange, onSubmi
                 I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
               </label>
             </div>
-
-            {error ? <p className="form-error">{error}</p> : null}
 
             <button type="submit" className="signup-btn" disabled={loading}>
               {loading ? 'Creating...' : 'Create Account'}

@@ -75,8 +75,59 @@ const getMe = async (req, res) => {
   return res.json({ user: req.user });
 };
 
+const updateMe = async (req, res, next) => {
+  try {
+    const { username, email, phone, address, password } = req.body;
+    const user = await User.findById(req.user._id);
+
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
+    if (email && email.toLowerCase() !== user.email) {
+      const existingUser = await User.findOne({ email: email.toLowerCase() });
+      if (existingUser && String(existingUser._id) !== String(user._id)) {
+        return res.status(400).json({ message: 'Email already exists' });
+      }
+      user.email = email.toLowerCase();
+    }
+
+    if (username) {
+      user.username = username;
+    }
+
+    if (typeof phone === 'string') {
+      user.phone = phone;
+    }
+
+    if (typeof address === 'string') {
+      user.address = address;
+    }
+
+    if (password && password.trim()) {
+      user.password = await bcrypt.hash(password, 10);
+    }
+
+    await user.save();
+
+    return res.json({
+      message: 'Profile updated successfully',
+      user: {
+        id: user._id,
+        username: user.username,
+        email: user.email,
+        phone: user.phone,
+        address: user.address,
+        role: user.role
+      }
+    });
+  } catch (error) {
+    return next(error);
+  }
+};
+
 const logoutUser = async (req, res) => {
   return res.json({ message: 'Logged out successfully' });
 };
 
-module.exports = { registerUser, loginUser, getMe, logoutUser };
+module.exports = { registerUser, loginUser, getMe, updateMe, logoutUser };

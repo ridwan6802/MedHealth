@@ -138,7 +138,6 @@ export default function OrdersView({ orders, loading, error }) {
                     <div>
                       <p><strong>Items:</strong> {itemCount}</p>
                       <p><strong>Payment Method:</strong> {order.paymentMethod}</p>
-                      <p><strong>Payment Status:</strong> <span className="status-text">{order.paymentStatus}</span></p>
                     </div>
                     <div className="order-total-block">
                       <span className="order-total-label">Total</span>

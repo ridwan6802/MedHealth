@@ -10,3 +10,18 @@ export function createOrder(payload) {
     body: JSON.stringify(payload)
   });
 }
+
+export function getStaffOrderThreads() {
+  return requestJson('/staff/orders');
+}
+
+export function getStaffCustomerOrders(customerId) {
+  return requestJson(`/staff/orders/${customerId}`);
+}
+
+export function updateStaffOrderStatus(orderId, status) {
+  return requestJson(`/staff/orders/${orderId}/status`, {
+    method: 'PATCH',
+    body: JSON.stringify({ status })
+  });
+}

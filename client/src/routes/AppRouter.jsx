@@ -8,18 +8,25 @@ import {
   CustomerMessagesController,
   OrdersController
 } from '../controllers/customerController';
+import { ProfileController } from '../controllers/profileController';
 import AboutView from '../views/AboutView';
 import {
   AdminDashboardController,
   AdminUsersController,
   AdminMedicinesController,
   AdminCategoriesController,
-  AdminNotificationsController
+  AdminNotificationsController,
+  AdminMessagesController,
+  AdminConversationController
 } from '../controllers/adminController';
 import {
   StaffDashboardController,
   StaffMessagesController,
-  StaffNotificationsController
+  StaffConversationController,
+  StaffNotificationsController,
+  StaffMedicinesController,
+  StaffOrdersController,
+  StaffOrderDetailsController
 } from '../controllers/staffController';
 import ProtectedRoute from './ProtectedRoute';
 
@@ -71,6 +78,14 @@ export default function AppRouter() {
         }
       />
       <Route
+        path="/profile"
+        element={
+          <ProtectedRoute roles={["customer", "admin", "staff"]}>
+            <ProfileController />
+          </ProtectedRoute>
+        }
+      />
+      <Route
         path="/admin"
         element={
           <ProtectedRoute roles={["admin"]}>
@@ -111,6 +126,22 @@ export default function AppRouter() {
         }
       />
       <Route
+        path="/admin/messages"
+        element={
+          <ProtectedRoute roles={["admin"]}>
+            <AdminMessagesController />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/admin/messages/:customerId"
+        element={
+          <ProtectedRoute roles={["admin"]}>
+            <AdminConversationController />
+          </ProtectedRoute>
+        }
+      />
+      <Route
         path="/staff"
         element={
           <ProtectedRoute roles={["staff"]}>
@@ -127,10 +158,42 @@ export default function AppRouter() {
         }
       />
       <Route
+        path="/staff/messages/:customerId"
+        element={
+          <ProtectedRoute roles={["staff"]}>
+            <StaffConversationController />
+          </ProtectedRoute>
+        }
+      />
+      <Route
         path="/staff/notifications"
         element={
           <ProtectedRoute roles={["staff"]}>
             <StaffNotificationsController />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/staff/orders"
+        element={
+          <ProtectedRoute roles={["staff"]}>
+            <StaffOrdersController />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/staff/orders/:customerId"
+        element={
+          <ProtectedRoute roles={["staff"]}>
+            <StaffOrderDetailsController />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/staff/medicines"
+        element={
+          <ProtectedRoute roles={["staff"]}>
+            <StaffMedicinesController />
           </ProtectedRoute>
         }
       />

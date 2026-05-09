@@ -13,7 +13,16 @@ export const sessionModel = {
   },
   getUser() {
     const rawUser = localStorage.getItem(USER_KEY);
-    return rawUser ? JSON.parse(rawUser) : null;
+    if (!rawUser) {
+      return null;
+    }
+
+    try {
+      return JSON.parse(rawUser);
+    } catch {
+      this.clearUser();
+      return null;
+    }
   },
   setUser(user) {
     localStorage.setItem(USER_KEY, JSON.stringify(user));

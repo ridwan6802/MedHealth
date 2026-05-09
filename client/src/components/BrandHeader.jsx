@@ -11,13 +11,25 @@ export default function BrandHeader() {
   const isLoggedIn = Boolean(sessionModel.getToken());
   const homePath = user?.role === 'admin' ? '/admin' : user?.role === 'staff' ? '/staff' : user?.role === 'customer' ? '/customer' : '/';
   const showCustomerNav = user?.role === 'customer' || location.pathname === '/';
+  const showNavLinks = isLoggedIn || location.pathname === '/' || location.pathname === '/about';
+  const isAdminPage = location.pathname.startsWith('/admin');
+  const isStaffPage = user?.role === 'staff' || location.pathname.startsWith('/staff');
+  const isProfilePage = location.pathname === '/profile';
   const showOrderHistoryButton = user?.role === 'customer' && ['/customer', '/customer/cart', '/customer/checkout'].includes(location.pathname);
-  const navLinks = [
+  const profilePath = isLoggedIn ? '/profile' : '/login';
+  const allNavLinks = [
     { label: 'Home', to: homePath },
-    { label: 'Products', to: isLoggedIn ? (user?.role === 'customer' ? '/customer#medicine-container' : '/#products') : '/login' },
+    { label: 'Profile', to: profilePath },
     { label: 'About', to: '/about' },
-    { label: 'Support', to: isLoggedIn ? (user?.role === 'customer' ? '/customer/messages' : '/#support') : '/login' }
+    { label: 'Support', to: isLoggedIn ? (user?.role === 'customer' ? '/customer/messages' : '/about') : '/login' }
   ];
+  const navLinks = isStaffPage
+    ? allNavLinks.filter((link) => link.label === 'Home' || link.label === 'Profile' || link.label === 'About')
+    : isAdminPage
+      ? allNavLinks.filter((link) => link.label === 'Home' || link.label === 'Profile' || link.label === 'About')
+      : user?.role === 'admin' && isProfilePage
+        ? allNavLinks.filter((link) => link.label !== 'Support')
+      : allNavLinks;
 
   const isActiveLink = (to) => {
     const [pathname, hash = ''] = to.split('#');
@@ -50,7 +62,7 @@ export default function BrandHeader() {
         <img src={logo} alt="MedHealth logo" className="home-brand-logo" />
         <span className="home-brand-mark">MedHealth</span>
       </Link>
-      {showCustomerNav ? (
+      {showNavLinks ? (
         <nav className="home-brand-nav" aria-label="Primary navigation">
           {navLinks.map((link) => (
             <Link key={link.label} to={link.to} className={`home-nav-btn${isActiveLink(link.to) ? ' active' : ''}`}>

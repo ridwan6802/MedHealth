@@ -1,6 +1,55 @@
 const Order = require('../models/Order');
 const Cart = require('../models/Cart');
 const Medicine = require('../models/Medicine');
+const User = require('../models/User');
+const mongoose = require('mongoose');
+
+const ALLOWED_ORDER_STATUSES = ['Pending', 'Out for Delivery', 'Delivered', 'Cancelled'];
+
+const buildStaffOrderThreads = (orders) => {
+  const threadsMap = new Map();
+
+  for (const order of orders) {
+    const customer = order.customer;
+    const customerId = String(order.user?._id || order.user || customer?._id || '');
+
+    if (!customerId) {
+      continue;
+    }
+
+    if (!threadsMap.has(customerId)) {
+      threadsMap.set(customerId, {
+        customerId,
+        customerName: customer?.username || `Customer #${customerId}`,
+        customerEmail: customer?.email || '',
+        orderCount: 0,
+        latestOrderAt: null,
+        latestStatus: '',
+        latestOrderLabel: ''
+      });
+    }
+
+    const thread = threadsMap.get(customerId);
+    thread.orderCount += 1;
+    thread.customerName = customer?.username || thread.customerName || `Customer #${customerId}`;
+    thread.customerEmail = customer?.email || thread.customerEmail || '';
+
+    const orderTime = order.order_date ? new Date(order.order_date).getTime() : order.createdAt ? new Date(order.createdAt).getTime() : 0;
+    const latestTime = thread.latestOrderAt ? new Date(thread.latestOrderAt).getTime() : 0;
+
+    if (!thread.latestOrderAt || orderTime >= latestTime) {
+      thread.latestOrderAt = order.order_date || order.createdAt;
+      thread.latestStatus = order.status;
+      thread.latestOrderLabel = order.orderNumber ? `#${order.orderNumber}` : order.id ? `#${order.id}` : 'Latest order';
+    }
+  }
+
+  return Array.from(threadsMap.values()).sort((left, right) => {
+    const leftTime = left.latestOrderAt ? new Date(left.latestOrderAt).getTime() : 0;
+    const rightTime = right.latestOrderAt ? new Date(right.latestOrderAt).getTime() : 0;
+    return rightTime - leftTime;
+  });
+};
 
 const getOrders = async (req, res, next) => {
   try {
@@ -21,6 +70,85 @@ const getOrders = async (req, res, next) => {
 
     const orders = await Order.find({ user: req.user._id }).populate('items.medicine').sort({ createdAt: -1 });
     return res.json(orders);
+  } catch (error) {
+    return next(error);
+  }
+};
+
+const getStaffOrderThreads = async (req, res, next) => {
+  try {
+    const orders = await Order.find({ user: { $exists: true, $ne: null } })
+      .populate('user', 'username email role id')
+      .sort({ createdAt: -1 })
+      .lean();
+
+    const enrichedOrders = orders.map((order) => ({
+      ...order,
+      customer: order.user || null
+    }));
+
+    return res.json(buildStaffOrderThreads(enrichedOrders));
+  } catch (error) {
+    return next(error);
+  }
+};
+
+const getStaffCustomerOrders = async (req, res, next) => {
+  try {
+    const rawCustomerId = String(req.params.customerId || '').trim();
+    const isObjectId = mongoose.Types.ObjectId.isValid(rawCustomerId);
+
+    if (!isObjectId) {
+      return res.status(404).json({ message: 'Customer not found' });
+    }
+
+    const customerObjectId = new mongoose.Types.ObjectId(rawCustomerId);
+    const customer = await User.findOne({ _id: customerObjectId }).select('username email role id').lean();
+
+    const orders = await Order.find({ user: customerObjectId })
+      .populate('items.medicine', 'name')
+      .populate('user', 'username email role id')
+      .sort({ createdAt: -1 })
+      .lean();
+
+    if (orders.length === 0) {
+      return res.status(404).json({ message: 'Customer not found' });
+    }
+
+    return res.json(
+      orders.map((order) => ({
+        ...order,
+        customer: {
+          _id: customer?._id || null,
+          id: customer?.id || rawCustomerId,
+          username: customer?.username || `Customer #${rawCustomerId}`,
+          email: customer?.email || '',
+          role: customer?.role || 'customer'
+        }
+      }))
+    );
+  } catch (error) {
+    return next(error);
+  }
+};
+
+const updateStaffOrderStatus = async (req, res, next) => {
+  try {
+    const { status } = req.body;
+
+    if (!status || !ALLOWED_ORDER_STATUSES.includes(status)) {
+      return res.status(400).json({ message: 'Invalid order status' });
+    }
+
+    const order = await Order.findByIdAndUpdate(req.params.orderId, { status }, { new: true })
+      .populate('items.medicine')
+      .populate('user', 'username email role');
+
+    if (!order) {
+      return res.status(404).json({ message: 'Order not found' });
+    }
+
+    return res.json(order);
   } catch (error) {
     return next(error);
   }
@@ -114,4 +242,10 @@ const createOrder = async (req, res, next) => {
   }
 };
 
-module.exports = { getOrders, createOrder };
+module.exports = {
+  getOrders,
+  createOrder,
+  getStaffOrderThreads,
+  getStaffCustomerOrders,
+  updateStaffOrderStatus
+};

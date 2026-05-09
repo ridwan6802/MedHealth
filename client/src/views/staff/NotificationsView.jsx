@@ -1,6 +1,6 @@
 import BrandHeader from '../../components/BrandHeader';
 
-export default function NotificationsView({ notifications, loading, error, notificationType, message, onNotificationTypeChange, onMessageChange, onSubmit }) {
+export default function NotificationsView({ notifications, loading, error, notificationType, message, onNotificationTypeChange, onMessageChange, onSubmit, sending = false }) {
   return (
     <main className="notifications-page">
       <BrandHeader />
@@ -28,8 +28,8 @@ export default function NotificationsView({ notifications, loading, error, notif
             </div>
 
             <div className="form-actions">
-              <button type="submit" className="btn btn-primary">
-                Send Notification
+              <button type="submit" className="btn btn-primary" disabled={sending}>
+                <i className="fas fa-paper-plane"></i> {sending ? 'Sending...' : 'Send Notification'}
               </button>
             </div>
           </form>
@@ -54,6 +54,7 @@ export default function NotificationsView({ notifications, loading, error, notif
             </div>
           ) : (
             <div className="no-notifications">
+              <i className="far fa-bell-slash"></i>
               <p>No notifications sent yet</p>
             </div>
           )}
